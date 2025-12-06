@@ -1,0 +1,14 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./packages/docusaurus-i18n-markup"
+    },
+    {
+      "path": "./packages/docusaurus-plugin-write-translations-plus"
+    },
+    {
+      "path": "./testsite"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "docusaurus-i18n-markup-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monorepo for docusaurus-i18n-markup and docusaurus-plugin-write-translations-plus",
+  "repository": "https://github.com/mshibanami/docusaurus-i18n-markup.git",
+  "author": "Manabu Nakazawa",
+  "license": "MIT",
+  "scripts": {
+    "build": "pnpm -r --workspace-concurrency=1 build",
+    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,md,yml,json}\"",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "pnpm build && changeset publish",
+    "release:provenance": "pnpm build && changeset publish --no-git-tag"
+  },
+  "prettier": {
+    "semi": false
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.8",
+    "prettier": "latest",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "name": "docusaurus-i18n-markup",
+  "version": "0.0.0",
+  "description": "Collection of react components for rendering translated markup content in Docusaurus",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "import": "./build/index.mjs",
+      "require": "./build/index.cjs"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mshibanami/docusaurus-i18n-markup.git",
+    "directory": "packages/docusaurus-i18n-markup"
+  },
+  "author": "Manabu Nakazawa",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "rm -rf build && pnpm install && vite build",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "^3.9.2",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "react-markdown": "^10.1.0",
+    "typescript": "^5.9.3",
+    "vite": "^6.0.3",
+    "vite-plugin-dts": "^4.3.0"
+  },
+  "peerDependencies": {
+    "@docusaurus/core": "2.x || 3.x",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0",
+    "react-markdown": "^9.0.0 || ^10.0.0"
+  }
+}

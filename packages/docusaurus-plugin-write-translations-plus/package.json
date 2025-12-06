@@ -1,0 +1,57 @@
+{
+  "name": "docusaurus-plugin-write-translations-plus",
+  "version": "0.0.0",
+  "description": "Docusaurus CLI plugin for writing translations with advanced features",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mshibanami/docusaurus-i18n-markup.git",
+    "directory": "packages/docusaurus-plugin-write-translations-plus"
+  },
+  "author": "Manabu Nakazawa",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "rm -rf build && pnpm install && vite build",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/generator": "^7.28.5",
+    "@babel/traverse": "^7.28.5",
+    "@docusaurus/bundler": "^3.9.2",
+    "@docusaurus/logger": "^3.9.2",
+    "@docusaurus/module-type-aliases": "^3.9.2",
+    "@docusaurus/types": "3.9.2",
+    "@docusaurus/utils": "^3.9.2",
+    "@docusaurus/utils-common": "^3.9.2",
+    "@docusaurus/utils-validation": "^3.9.2",
+    "@types/babel__core": "^7.20.5",
+    "@types/babel__generator": "^7.27.0",
+    "@types/babel__traverse": "^7.28.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/lodash": "^4.17.21",
+    "@vitejs/plugin-react": "^4.3.4",
+    "combine-promises": "^1.2.0",
+    "commander": "^5.1.0",
+    "fs-extra": "^11.3.2",
+    "lodash": "^4.17.21",
+    "react-markdown": "^10.1.0",
+    "typescript": "^5.9.3",
+    "vite": "^6.0.3",
+    "vite-plugin-dts": "^4.3.0"
+  },
+  "peerDependencies": {
+    "@docusaurus/core": "2.x || 3.x"
+  }
+}

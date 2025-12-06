@@ -2,6 +2,15 @@
   "name": "docusaurus-i18n-markup",
   "version": "0.0.0",
   "description": "Collection of react components for rendering translated markup content in Docusaurus",
+  "keywords": [
+    "docusaurus",
+    "i18n",
+    "translation",
+    "markup",
+    "markdown",
+    "react",
+    "components"
+  ],
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "exports": {

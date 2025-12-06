@@ -2,6 +2,16 @@
   "name": "docusaurus-plugin-write-translations-plus",
   "version": "0.0.0",
   "description": "Docusaurus CLI plugin for writing translations with advanced features",
+  "keywords": [
+    "docusaurus",
+    "plugin",
+    "cli",
+    "i18n",
+    "translation",
+    "extraction",
+    "markdown",
+    "write-translations"
+  ],
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "exports": {

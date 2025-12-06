@@ -28,8 +28,7 @@
   "author": "Manabu Nakazawa",
   "license": "MIT",
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "public"
   },
   "scripts": {
     "build": "rm -rf build && pnpm install && vite build",

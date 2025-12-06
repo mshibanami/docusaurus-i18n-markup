@@ -11,8 +11,7 @@
     "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,md,yml,json}\"",
     "changeset": "changeset",
     "version": "changeset version",
-    "release": "pnpm build && changeset publish",
-    "release:provenance": "pnpm build && changeset publish --no-git-tag"
+    "release": "pnpm build && changeset publish"
   },
   "prettier": {
     "semi": false

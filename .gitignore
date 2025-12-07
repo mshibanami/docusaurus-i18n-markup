@@ -103,3 +103,7 @@ dist
 # TernJS port file
 .tern-port
 build
+
+# Files that are copied from the root directory when publishing
+packages/*/README.md
+packages/*/LICENSE

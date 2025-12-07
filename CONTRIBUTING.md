@@ -51,7 +51,7 @@ The release process is fully automated via GitHub Actions:
    - Generated/updated `CHANGELOG.md` files
    - Consumed changeset files (deleted)
 3. **When the Version PR merges** - Packages are:
-   - Published to npm with [provenance attestations](https://docs.npmjs.com/generating-provenance-statements)
+   - Published to npm
    - Tagged with git tags (e.g., `docusaurus-i18n-markup@1.2.0`)
    - GitHub Releases are created
 

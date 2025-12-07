@@ -54,19 +54,3 @@ jobs:
           commit: "chore: version packages"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create GitHub Releases
-        if: steps.changesets.outputs.published == 'true'
-        run: |
-          echo '${{ steps.changesets.outputs.publishedPackages }}' | jq -c '.[]' | while read -r package; do
-            name=$(echo "$package" | jq -r '.name')
-            version=$(echo "$package" | jq -r '.version')
-            
-            # Create a release for each published package
-            gh release create "${name}@${version}" \
-              --title "${name}@${version}" \
-              --generate-notes \
-              --target "${{ github.sha }}" || echo "Release ${name}@${version} already exists or failed"
-          done
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

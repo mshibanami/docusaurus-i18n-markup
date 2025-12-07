@@ -1,6 +1,6 @@
 {
   "name": "docusaurus-plugin-write-translations-plus",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Docusaurus CLI plugin for writing translations with advanced features",
   "keywords": [
     "docusaurus",

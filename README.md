@@ -1,60 +1,60 @@
 # docusaurus-i18n-markup
 
-This is a monorepo that consists of these packages:
+This is a monorepo of these packages:
 
-- `docusaurus-plugin-write-translations-plus`: A Docusaurus plugin that provides `write-translations-plus` command which extends the default `write-translations` command to support additional options.
-- `docusaurus-i18n-markup`: A collection of React components for Docusaurus to help with translating texts written in markup languages in Docusaurus sites. (Currently only Markdown (powered by [react-markdown](https://github.com/remarkjs/react-markdown)) is supported.)
+- [docusaurus-plugin-write-translations-plus](./packages/docusaurus-plugin-write-translations-plus) : A Docusaurus plugin that provides `write-translations-plus` command which extends the default `write-translations` command to support additional options.
+- [docusaurus-i18n-markup](./packages/docusaurus-i18n-markup): A collection of React components for Docusaurus to help with translating texts written in markup languages in Docusaurus sites. (Currently only Markdown (powered by [react-markdown](https://github.com/remarkjs/react-markdown)) is supported.)
 
-## What's wrong with the default `write-translations` command?
+## Why `write-translations-plus`?
 
-The default `write-translations` command in Docusaurus only scans for the `Translate` component and the `translate()` function to extract translatable strings. If you want to translate texts written in Markdown, you would want to wrap them in a custom component for convenience. However, the default command does not recognize it.
+The default `write-translations` command only detects `<Translate>` and `translate()`, missing custom components like `<TranslatedMarkdown>`.
 
-This plugin provides `write-translations-plus` command, which extends the default command with additional options to specify custom tag names and functions as aliases for the `Translate` component and the `translate()` function.
+`write-translations-plus` resolves this by allowing you to define **custom tag and function aliases** for extraction as aliases for `Translate` and `translate()`.
 
 ## Getting Started
 
 1. Install the packages in your Docusaurus project:
 
-   ```bash
-   npm install docusaurus-plugin-write-translations-plus docusaurus-i18n-markup
+```bash
+npm install docusaurus-plugin-write-translations-plus docusaurus-i18n-markup
    # or
    pnpm add docusaurus-plugin-write-translations-plus docusaurus-i18n-markup
    # or
    yarn add docusaurus-plugin-write-translations-plus docusaurus-i18n-markup
-   ```
+```
 
-2. Configure the plugin in your `docusaurus.config.js`:
+## Setup
+
+1. Add the plugin to your `docusaurus.config.js`:
 
    ```javascript
    module.exports = {
-       // ... other config options ...
+       // ...
        plugins: [
            'docusaurus-plugin-write-translations-plus',
        ],
    };
    ```
 
-   (This adds `write-translations-plus` command to Docusaurus.)
-
-3. Add or replace a script to your `package.json` to extract translations:
+2. Add a script to your `package.json`:
 
     ```json
     {
         "scripts": {
-            "write-translations": "docusaurus write-translations-plus",
+             "write-translations": "docusaurus write-translations-plus",
         }
     }
     ```
 
 4. Use the `TranslatedMarkdown` component in your markdown files to mark translatable content:
 
-    ```markdown
-    import { TranslatedMarkdown } from 'docusaurus-i18n-markup';
+```jsx
+import { TranslatedMarkdown } from 'docusaurus-i18n-markup';
 
-    <TranslatedMarkdown id="helloWorld" description="A greeting message.">
-        Hello, **World**!
-    </TranslatedMarkdown>
-    ```
+<TranslatedMarkdown id="helloWorld" description="A greeting message.">
+    Hello, **World**!
+</TranslatedMarkdown>
+```
 
 5. Run `npm run write-translations` to extract translatable strings from `TranslatedMarkdown` components in your project. The extracted strings will be saved in the appropriate translation files under the `i18n` directory, for example:
 
@@ -117,7 +117,7 @@ Example usage in `package.json` scripts:
 ```json
 {
     "scripts": {
-        "write-translations": "docusaurus write-translations-plus --tag-aliases TranslatedMarkdown MyTranslateComponent --function-aliases myTranslateFunction"
+        "write-translations": "docusaurus write-translations-plus --tag-aliases SomeTranslatedComponent AnotherTranslatedComponent --function-aliases myTranslateFunction"
     }
 }
 ```
